@@ -16,6 +16,9 @@
       "eas": {
         "projectId": "615e51a3-40e2-46da-ba77-065b67a3a8a9"
       }
+    },
+    "android": {
+      "package": "com.spacebanane.doorbob"
     }
   }
 }
