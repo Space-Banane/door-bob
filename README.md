@@ -52,6 +52,10 @@ The app is in `/app/index.tsx` and built with React Native (Expo).
    ```
 3. Open the app on your device using the Expo Go app.
 
+### Download APK
+
+You can also download the latest Android APK from the [Releases](https://github.com/Space-Banane/door-bob/releases) tab on GitHub.
+
 ### Configuration
 
 - Tap ⚙️ Settings in the app to set the ESP32 API URL and language.
