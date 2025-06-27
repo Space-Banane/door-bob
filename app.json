@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Door Bob",
+    "slug": "door-bob",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "doorbob",
+    "newArchEnabled": true,
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "615e51a3-40e2-46da-ba77-065b67a3a8a9"
+      }
+    }
+  }
+}
