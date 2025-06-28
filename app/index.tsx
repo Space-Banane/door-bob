@@ -98,6 +98,23 @@ const TRANSLATIONS: Record<
   },
 };
 
+function reportIssuetoDevs(title:string,message:string,error:string) {
+  const body = {
+    title,
+    description: message,
+    error
+  };
+  // Send the report to your devs (e.g., via a webhook)
+  return fetch("https://shsf-api.cottonfieldworkers.shop/api/exec/6/3eccb8de-8673-4e99-9af6-2900b761020b", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "User-Agent": "door-bob.mobile/1.0",
+    },
+    body: JSON.stringify(body)
+  });
+}
+
 export default function Index() {
   // Force dark mode
   // const colorScheme = useColorScheme();
@@ -197,7 +214,7 @@ export default function Index() {
       setSubtitle("");
       try {
         const res = await fetch(apiUrl, {
-          method: "POST",
+          method: "POST"
         });
         const data = await res.text();
 
@@ -239,6 +256,12 @@ export default function Index() {
           }).start();
         }
       } catch (e) {
+        console.error("Error opening door:", e);
+        reportIssuetoDevs(
+          "Door Bob Error",
+          "Network issue? Failed to open door while sending post request to "+apiUrl,
+          e instanceof Error ? e.message : String(e)
+        );
         setTitle(t("error"));
         setTitleColor("#FF0000");
         setSubtitle(t("failReason"));

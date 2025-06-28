@@ -18,7 +18,12 @@
       }
     },
     "android": {
-      "package": "com.spacebanane.doorbob"
+      "package": "com.spacebanane.doorbob",
+      "usesCleartextTraffic": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
     }
   }
 }
